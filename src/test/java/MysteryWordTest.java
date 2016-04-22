@@ -34,5 +34,11 @@ public class MysteryWordTest {
     String expected = "b-c--s-";
     assertEquals(expected, yourApp.letterReplace("because"));
   }
+  @Test
+  public void letterReplace_testForAllAndCaps() {
+    MysteryWord yourApp = new MysteryWord();
+    String expected = "Q-----NG, -----, C-----NG, M-----D, Z-----, J-SS-----N, Z-----, Z-----";
+    assertEquals(expected, yourApp.letterReplace("QUEUEING, AIEEE, COOEEING, MIAOUED, ZAOUIA, JUSSIEUEAN, ZOOEAE, ZOAEAE"));
+  }
 
 }
