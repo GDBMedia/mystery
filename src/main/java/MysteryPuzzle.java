@@ -20,6 +20,8 @@ public class MysteryPuzzle {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+
+
     get("/detector", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/detector.vtl");
@@ -31,18 +33,52 @@ public class MysteryPuzzle {
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
-    get("/final", (request, response) -> {
+
+
+
+    get("/detectorhint", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/detector.vtl");
 
+      String finalString = request.queryParams("finalString");
+      String sentence = request.queryParams("newSentence");
+      finalString = hint(finalString, sentence);
+
+      model.put("sentence", sentence);
+      model.put("finalString", finalString);
+
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
+
+    get("/result", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/result.vtl");
+
       String solve = request.queryParams("solve");
-      String sentence = request.queryParams("sentence");
-      Boolean solvePuzzle = testTrue(solve, sentence);
+      String newSentence = request.queryParams("newSentence");
+      Boolean solvePuzzle = testTrue(solve, newSentence);
 
       model.put("solvePuzzle", solvePuzzle);
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+  }
+  public static String hint(String dashes, String sentence){
+    Random myRandomGenerator = new Random();
+    char[] charArray1 = dashes.toCharArray();
+    char[] charArray2 = sentence.toCharArray();
+    int x = 0;
+    while(x == 0){
+      int i = myRandomGenerator.nextInt(charArray1.length);
+      if(charArray1[i] == '-'){
+        charArray1[i] = charArray2[i];
+        x = 1;
+      }
+    }
+    String returnString = new String(charArray1);
+    return returnString;
   }
   public static Boolean testTrue(String solve, String sentence){
     Boolean bool = false;

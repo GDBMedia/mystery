@@ -46,5 +46,10 @@ public class MysteryPuzzleTest {
     Boolean expected = true;
     assertEquals(expected, yourApp.testTrue("because", "Because"));
   }
-
+  @Test
+  public void letterReplace_hint() {
+    MysteryPuzzle yourApp = new MysteryPuzzle();
+    String expected = "hey";
+    assertEquals(expected, yourApp.hint("h-y", "hey"));
+  }
 }

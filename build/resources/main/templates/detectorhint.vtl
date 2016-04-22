@@ -1,16 +1,7 @@
 <div class="jumbotron mainjumbo">
   <h1>Mystery Puzzle</h1>
-  <h2>$finalString</h2>
-  <button class="btn btn-lg btn-primary pull-right" id="mybutton">Solve Puzzle</button>
-  <form action="/detectorhint" method='get' id="myform2">
-    <div class="form-group myhidden">
-      <input class="form-control" id="newSentence" name="newSentence" type="text" value="$sentence">
-    </div>
-    <div class="form-group myhidden">
-      <input class="form-control" id="finalString" name="finalString" type="text" value="$finalString">
-    </div>
-    <button class="btn btn-lg btn-warning pull-left" type="submit"  id="hint">Hint</button>
-  </form>
+  <h2>$hintString</h2>
+  <button class="btn btn-lg btn-primary" id="mybutton">Solve Puzzle</button>
 </div>
 <form action='/result' method='get' id="myform" class="myhidden">
   <div class="form-group">

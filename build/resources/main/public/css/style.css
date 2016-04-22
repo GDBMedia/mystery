@@ -1,6 +1,7 @@
-#mainjumbo{
+.mainjumbo{
   text-align: center;
-  padding: 6em;
+  height: 25vmin;
+  min-height: 15em;
 }
 .myhidden{
   display: none;
