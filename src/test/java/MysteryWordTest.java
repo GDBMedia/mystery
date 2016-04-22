@@ -28,5 +28,11 @@ public class MysteryWordTest {
     String expected = "-b-m-";
     assertEquals(expected, yourApp.letterReplace("obama"));
   }
+  @Test
+  public void letterReplace_testForU() {
+    MysteryWord yourApp = new MysteryWord();
+    String expected = "b-c--s-";
+    assertEquals(expected, yourApp.letterReplace("because"));
+  }
 
 }
