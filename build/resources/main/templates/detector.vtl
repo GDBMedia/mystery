@@ -1,9 +1,12 @@
-<div class="jumbotron">
-<h1>Allergy Scorer</h1>
-#if($scoreInt < 292)
-  <h2>For your Allergy score of: $score</h2>
-  <h3>you are allergic to: $finalString</h3>
-#else
-  <h2>you have entered an incorrect value</h2>
-#end
+<div class="jumbotron clearix" id="mainjumbo">
+  <h1>Mystery Puzzle</h1>
+  <h2>$finalString</h2>
+  <button class="btn btn-lg btn-primary pull-right" id="mybutton">Solve Puzzle</button>
 </div>
+<form action='/final' method='get' id="myform" class="myhidden">
+  <div class="form-group">
+    <label for="type" class="control-label">Solved Puzzle:</label>
+    <input class="form-control" id="solve" name="solve" type="text">
+  </div>
+  <button class="btn btn-lg btn-primary" id="mybutton2">submit</button>
+</form>

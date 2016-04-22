@@ -2,43 +2,49 @@ import org.junit.*;
 import static org.junit.Assert.*;
 import java.util.ArrayList;
 
-public class MysteryWordTest {
+public class MysteryPuzzleTest {
 //
   @Test
   public void letterReplace_testForA() {
-    MysteryWord yourApp = new MysteryWord();
+    MysteryPuzzle yourApp = new MysteryPuzzle();
     String expected = "-s";
     assertEquals(expected, yourApp.letterReplace("as"));
   }
   @Test
   public void letterReplace_testForAE() {
-    MysteryWord yourApp = new MysteryWord();
+    MysteryPuzzle yourApp = new MysteryPuzzle();
     String expected = "--sy";
     assertEquals(expected, yourApp.letterReplace("easy"));
   }
   @Test
   public void letterReplace_testForI() {
-    MysteryWord yourApp = new MysteryWord();
+    MysteryPuzzle yourApp = new MysteryPuzzle();
     String expected = "-t's";
     assertEquals(expected, yourApp.letterReplace("it's"));
   }
   @Test
   public void letterReplace_testForO() {
-    MysteryWord yourApp = new MysteryWord();
+    MysteryPuzzle yourApp = new MysteryPuzzle();
     String expected = "-b-m-";
     assertEquals(expected, yourApp.letterReplace("obama"));
   }
   @Test
   public void letterReplace_testForU() {
-    MysteryWord yourApp = new MysteryWord();
+    MysteryPuzzle yourApp = new MysteryPuzzle();
     String expected = "b-c--s-";
     assertEquals(expected, yourApp.letterReplace("because"));
   }
   @Test
   public void letterReplace_testForAllAndCaps() {
-    MysteryWord yourApp = new MysteryWord();
+    MysteryPuzzle yourApp = new MysteryPuzzle();
     String expected = "Q-----NG, -----, C-----NG, M-----D, Z-----, J-SS-----N, Z-----, Z-----";
     assertEquals(expected, yourApp.letterReplace("QUEUEING, AIEEE, COOEEING, MIAOUED, ZAOUIA, JUSSIEUEAN, ZOOEAE, ZOAEAE"));
+  }
+  @Test
+  public void letterReplace_testFortesttrue() {
+    MysteryPuzzle yourApp = new MysteryPuzzle();
+    Boolean expected = true;
+    assertEquals(expected, yourApp.testTrue("because", "Because"));
   }
 
 }
