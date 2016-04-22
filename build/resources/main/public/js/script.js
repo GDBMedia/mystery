@@ -1,5 +1,6 @@
+
 $(function(){
-  $("body").fadeIn("slow");
+
   $("#mybutton").click(function(){
     $("#myform")[0].reset();
     $("#mybutton").fadeOut("slow");

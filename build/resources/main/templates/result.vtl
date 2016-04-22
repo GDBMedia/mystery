@@ -1,10 +1,13 @@
-<div class="jumbotron mainjumbo">
+<div class="jumbotron mainjumbo vertical-center">
   <h1>Mystery Puzzle</h1>
   #if($solvePuzzle)
     <h2>You guessed right!!</h2>
-    <button class="btn btn-lg btn-success" id="mybutton4">Start Over</button>
+    <h2>With a score of: $score</h2>
+    <button class="btn btn-lg btn-success btn-space" id="mybutton4">Start Over</button>
+  #elseif($score == 0)
+    <h2>You ran out of guesses :((</h2>
   #else
     <h2>you guessed wrong :(</h2>
-    <button class="btn btn-lg btn-danger" id="mybutton3">Try Again</button>
+    <button class="btn btn-lg btn-danger btn-space" id="mybutton3">Try Again</button>
   #end
 </div>

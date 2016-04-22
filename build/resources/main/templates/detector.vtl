@@ -1,25 +1,25 @@
-<div class="jumbotron mainjumbo">
+<div class="jumbotron mainjumbo vertical-center">
   <h1>Mystery Puzzle</h1>
+  <p>Guess the Mystery sentence</p>
+  <h2>Score Remaining: $score</h2>
   <h2>$finalString</h2>
   <button class="btn btn-lg btn-primary pull-right" id="mybutton">Solve Puzzle</button>
   <form action="/detectorhint" method='get' id="myform2">
     <div class="form-group myhidden">
-      <input class="form-control" id="newSentence" name="newSentence" type="text" value="$sentence">
-    </div>
-    <div class="form-group myhidden">
-      <input class="form-control" id="finalString" name="finalString" type="text" value="$finalString">
+      <input name="newSentence" type="text" value="$sentence">
+      <input name="finalString" type="text" value="$finalString">
     </div>
     <button class="btn btn-lg btn-warning pull-left" type="submit"  id="hint">Hint</button>
   </form>
-</div>
-<form action='/result' method='get' id="myform" class="myhidden">
+<form action='/result' method='get' id="myform" class="myhidden formspace">
   <div class="form-group">
     <label for="type" class="control-label">Solved Puzzle:</label>
     <input class="form-control" id="solve" name="solve" type="text">
   </div>
   <div class="form-group myhidden">
-    <label for="type" class="control-label">Solved Puzzle:</label>
-    <input class="form-control" id="newSentence" name="newSentence" type="text" value="$sentence">
+    <input name="newSentence" id="newSentence" type="text" value="$sentence">
+    <input name="score" class="myhidden" id="score" type="text" value="$score">
   </div>
-  <button class="btn btn-lg btn-primary" id="mybutton2" type="submit">submit</button>
+  <button class="btn btn-lg btn-primary mysubmit" id="mybutton2" type="submit">Submit</button>
 </form>
+</div>

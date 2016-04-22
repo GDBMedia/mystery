@@ -28,6 +28,9 @@ public class MysteryPuzzle {
 
       String sentence = request.queryParams("sentence");
       String finalString = letterReplace(sentence);
+      Integer score = getScore(finalString);
+
+      model.put("score", score);
       model.put("sentence", sentence);
       model.put("finalString", finalString);
 
@@ -42,9 +45,15 @@ public class MysteryPuzzle {
 
       String finalString = request.queryParams("finalString");
       String sentence = request.queryParams("newSentence");
+      Integer score = 1;
+      if(score !=0){
       finalString = hint(finalString, sentence);
+      }
+      score = getScore(finalString);
+
 
       model.put("sentence", sentence);
+      model.put("score", score);
       model.put("finalString", finalString);
 
       return new ModelAndView(model, layout);
@@ -57,13 +66,26 @@ public class MysteryPuzzle {
       model.put("template", "templates/result.vtl");
 
       String solve = request.queryParams("solve");
+      String score = request.queryParams("score");
       String newSentence = request.queryParams("newSentence");
       Boolean solvePuzzle = testTrue(solve, newSentence);
 
+      model.put("score", score);
       model.put("solvePuzzle", solvePuzzle);
 
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
+  }
+  public static Integer getScore(String dashes){
+    char[] charArray1 = dashes.toCharArray();
+    Integer score = 0;
+    for(int i = 0; i<charArray1.length; i++){
+      if(charArray1[i] == '-'){
+        score += 4;
+      }
+    }
+    return score;
+
   }
   public static String hint(String dashes, String sentence){
     Random myRandomGenerator = new Random();
@@ -76,6 +98,7 @@ public class MysteryPuzzle {
         charArray1[i] = charArray2[i];
         x = 1;
       }
+
     }
     String returnString = new String(charArray1);
     return returnString;

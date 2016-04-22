@@ -1,9 +1,9 @@
-<div class="jumbotron mainjumbo">
-  <h1>Mystery Puzzle</h1>
+<div class="jumbotron mainjumbo vertical-center">
+  <h1 id="mainh1">Mystery Puzzle</h1>
 
   <p>Enter a sentence for your Mystery Puzzle</p>
-</div>
-<form action='/detector' method='get'>
+
+<form action='/detector' method='get' class="formspace">
   <div class="form-group">
     <label for="type" class="control-label">Sentence:</label>
     <input class="form-control" id="sentence" name="sentence" type="text">
@@ -11,3 +11,4 @@
 
   <button type="submit" id="button" class="btn btn-info btn-lg">GO!</button>
 </form>
+</div>
