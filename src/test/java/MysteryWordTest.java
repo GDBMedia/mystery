@@ -16,11 +16,11 @@ public class MysteryWordTest {
     String expected = "--sy";
     assertEquals(expected, yourApp.letterReplace("Easy"));
   }
-  // @Test
-  // public void letterReplace_testForI() {
-  //   MysteryWord yourApp = new MysteryWord();
-  //   String expected = "-t's";
-  //   assertEquals(expected, yourApp.letterReplace("it's"));
-  // }
+  @Test
+  public void letterReplace_testForI() {
+    MysteryWord yourApp = new MysteryWord();
+    String expected = "-t's";
+    assertEquals(expected, yourApp.letterReplace("it's"));
+  }
 
 }
