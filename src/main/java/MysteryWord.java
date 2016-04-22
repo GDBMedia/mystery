@@ -33,7 +33,7 @@ public class MysteryWord {
     }, new VelocityTemplateEngine());
   }
   public static String letterReplace(String sentence) {
-    String[] arrayOfLetters = {"a", "e", "i"};
+    String[] arrayOfLetters = {"a", "e", "i", "o"};
     for(int i = 0; i<arrayOfLetters.length; i++){
       sentence = sentence.replaceAll("(?i)"+arrayOfLetters[i], "-");
     }

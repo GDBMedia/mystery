@@ -14,13 +14,19 @@ public class MysteryWordTest {
   public void letterReplace_testForAE() {
     MysteryWord yourApp = new MysteryWord();
     String expected = "--sy";
-    assertEquals(expected, yourApp.letterReplace("Easy"));
+    assertEquals(expected, yourApp.letterReplace("easy"));
   }
   @Test
   public void letterReplace_testForI() {
     MysteryWord yourApp = new MysteryWord();
     String expected = "-t's";
     assertEquals(expected, yourApp.letterReplace("it's"));
+  }
+  @Test
+  public void letterReplace_testForO() {
+    MysteryWord yourApp = new MysteryWord();
+    String expected = "-b-m-";
+    assertEquals(expected, yourApp.letterReplace("obama"));
   }
 
 }
